@@ -1,33 +1,33 @@
 # MD Browser
 
-Un navigateur de documentation Markdown dans VS Code : on ouvre un fichier `.md`, on clique sur les liens pour passer d'un fichier à l'autre et on revient en arrière comme dans un navigateur web.
+A Markdown documentation browser for VS Code: open a `.md` file, click links to move from one file to another, and go back just like in a web browser.
 
-## Fonctions
+## Features
 
-- Rendu identique à l'aperçu Markdown de VS Code (même moteur, mêmes styles, thème clair ou sombre).
-- Liens vers d'autres fichiers `.md`, avec ou sans ancre (`guide.md#installation`).
-- Liens sans extension (`guide` → `guide.md`) et vers un dossier (→ `README.md` ou `index.md`).
-- Chemins commençant par `/` : résolus depuis la racine du dossier de l'espace de travail.
-- Liens externes ouverts dans le navigateur ; autres fichiers (code, PDF…) ouverts dans l'éditeur.
-- Barre d'outils : précédent, suivant, accueil, recharger, historique, modifier.
-- Position de défilement restaurée quand on revient sur une page.
-- Rechargement automatique quand le fichier affiché est modifié.
+- Rendering identical to the VS Code Markdown preview (same engine, same styles, light or dark theme).
+- Links to other `.md` files, with or without an anchor (`guide.md#installation`).
+- Links without an extension (`guide` → `guide.md`) and to a folder (→ `README.md` or `index.md`).
+- Paths starting with `/` are resolved from the workspace folder root.
+- External links open in the browser; other files (code, PDF…) open in the editor.
+- Toolbar: back, forward, home, reload, history, edit.
+- Scroll position restored when you return to a page.
+- Automatic reload when the displayed file changes.
 
-## Ouvrir le navigateur
+## Opening the browser
 
-- Icône **MD Browser** dans la barre d'activités : arborescence de tous les fichiers Markdown du projet, un clic ouvre le fichier dans le navigateur.
-- Clic droit sur un fichier `.md` dans l'explorateur → **Ouvrir dans MD Browser**.
-- Icône de livre dans la barre de titre d'un fichier Markdown ouvert.
-- Palette de commandes → **MD Browser: Ouvrir dans MD Browser** (propose une liste des `.md` du projet).
+- **MD Browser** icon in the activity bar: tree of every Markdown file in the project; one click opens the file in the browser.
+- Right-click a `.md` file in the Explorer → **Ouvrir dans MD Browser**.
+- Book icon in the title bar of an open Markdown file.
+- Command Palette → **MD Browser: Ouvrir dans MD Browser** (offers a list of the project's `.md` files).
 
-## Raccourcis (quand MD Browser a le focus)
+## Shortcuts (when MD Browser has focus)
 
-| Action    | macOS              | Windows / Linux      |
-|-----------|--------------------|----------------------|
-| Précédent | ⌃- ou ⌘[           | Alt+← ou Ctrl+[      |
-| Suivant   | ⌃⇧- ou ⌘]          | Alt+→ ou Ctrl+]      |
+| Action  | macOS        | Windows / Linux  |
+|---------|--------------|------------------|
+| Back    | ⌃- or ⌘[     | Alt+← or Ctrl+[  |
+| Forward | ⌃⇧- or ⌘]    | Alt+→ or Ctrl+]  |
 
-Les boutons précédent et suivant de la souris fonctionnent aussi.
+The mouse back and forward buttons work too.
 
 ## Installation
 
@@ -35,14 +35,14 @@ Les boutons précédent et suivant de la souris fonctionnent aussi.
 code --install-extension md-browser-0.1.0.vsix
 ```
 
-Ou, dans VS Code : vue Extensions → menu « … » → **Install from VSIX…**
+Or, in VS Code: Extensions view → "…" menu → **Install from VSIX…**
 
-## Développement
+## Development
 
 ```bash
 npm install
-npm run compile      # ou npm run watch
-npm run package      # produit le .vsix
+npm run compile      # or npm run watch
+npm run package      # builds the .vsix
 ```
 
-Pour déboguer, ouvrir le dossier dans VS Code et lancer F5 (Extension Development Host).
+To debug, open the folder in VS Code and press F5 (Extension Development Host).
