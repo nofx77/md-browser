@@ -1,0 +1,9 @@
+src/**
+node_modules/**
+out/**/*.map
+tsconfig.json
+*.vsix
+images/icon-512.png
+images/icon@2x.png
+images/icon.svg
+images/LOGO.md

@@ -1,0 +1,174 @@
+{
+  "name": "md-browser",
+  "displayName": "MD Browser",
+  "description": "Navigateur pour la documentation Markdown : suivez les liens entre fichiers .md avec un historique précédent / suivant.",
+  "version": "0.2.0",
+  "publisher": "libeo",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0F172A",
+    "theme": "dark"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://example.invalid/md-browser.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "documentation",
+    "browser",
+    "navigation"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mdBrowser",
+          "title": "MD Browser",
+          "icon": "images/activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "mdBrowser": [
+        {
+          "id": "mdBrowser.files",
+          "name": "Fichiers Markdown",
+          "icon": "images/activitybar.svg",
+          "contextualTitle": "MD Browser"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "mdBrowser.files",
+        "contents": "Aucun fichier Markdown trouvé dans l’espace de travail.\n[Ouvrir un dossier](command:vscode.openFolder)"
+      }
+    ],
+    "commands": [
+      {
+        "command": "mdBrowser.open",
+        "title": "Ouvrir dans MD Browser",
+        "category": "MD Browser",
+        "icon": {
+          "light": "images/tab-light.svg",
+          "dark": "images/tab-dark.svg"
+        }
+      },
+      {
+        "command": "mdBrowser.refreshFiles",
+        "title": "Actualiser",
+        "category": "MD Browser",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "mdBrowser.back",
+        "title": "Précédent",
+        "category": "MD Browser",
+        "icon": "$(arrow-left)"
+      },
+      {
+        "command": "mdBrowser.forward",
+        "title": "Suivant",
+        "category": "MD Browser",
+        "icon": "$(arrow-right)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "mdBrowser.open",
+          "when": "resourceLangId == markdown",
+          "group": "navigation@99"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "mdBrowser.open",
+          "when": "resourceLangId == markdown",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "mdBrowser.open",
+          "when": "resourceLangId == markdown"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "mdBrowser.refreshFiles",
+          "when": "view == mdBrowser.files",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "mdBrowser.open",
+          "when": "view == mdBrowser.files && viewItem == mdFile",
+          "group": "inline"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mdBrowser.refreshFiles",
+          "when": "false"
+        },
+        {
+          "command": "mdBrowser.back",
+          "when": "activeWebviewPanelId == 'mdBrowser'"
+        },
+        {
+          "command": "mdBrowser.forward",
+          "when": "activeWebviewPanelId == 'mdBrowser'"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "mdBrowser.back",
+        "key": "alt+left",
+        "mac": "ctrl+-",
+        "when": "activeWebviewPanelId == 'mdBrowser'"
+      },
+      {
+        "command": "mdBrowser.forward",
+        "key": "alt+right",
+        "mac": "ctrl+shift+-",
+        "when": "activeWebviewPanelId == 'mdBrowser'"
+      },
+      {
+        "command": "mdBrowser.back",
+        "key": "ctrl+[",
+        "mac": "cmd+[",
+        "when": "activeWebviewPanelId == 'mdBrowser'"
+      },
+      {
+        "command": "mdBrowser.forward",
+        "key": "ctrl+]",
+        "mac": "cmd+]",
+        "when": "activeWebviewPanelId == 'mdBrowser'"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --skip-license"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "~1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}
