@@ -89,3 +89,10 @@ body {
     background: transparent;
   }
 }
+
+.mdb-toolbar .mdb-nav {
+  font-size: 18px;
+  line-height: 1.4;
+  min-width: 36px;
+  padding: 2px 8px;
+}

@@ -352,10 +352,10 @@ ${nativeStyles}
 </head>
 <body>
 <nav class="mdb-toolbar">
-  <button id="mdb-back" title="Précédent (Alt+← / ⌃-)" aria-label="Précédent">←</button>
-  <button id="mdb-forward" title="Suivant (Alt+→ / ⌃⇧-)" aria-label="Suivant">→</button>
-  <button id="mdb-home" title="Retour au fichier de départ" aria-label="Accueil">⌂</button>
-  <button id="mdb-reload" title="Recharger" aria-label="Recharger">⟳</button>
+  <button id="mdb-back" class="mdb-nav" title="Précédent (Alt+← / ⌃-)" aria-label="Précédent">←</button>
+  <button id="mdb-forward" class="mdb-nav" title="Suivant (Alt+→ / ⌃⇧-)" aria-label="Suivant">→</button>
+  <button id="mdb-home" class="mdb-nav" title="Retour au fichier de départ" aria-label="Accueil">⌂</button>
+  <button id="mdb-reload" class="mdb-nav" title="Recharger" aria-label="Recharger">⟳</button>
   <span class="mdb-path" title="${escapeHtml(entry.uri.fsPath)}">${escapeHtml(relPath)}</span>
   <select id="mdb-history" title="Historique" aria-label="Historique"></select>
   <button id="mdb-edit" title="Ouvrir le fichier source à côté" aria-label="Modifier">✎ Modifier</button>
